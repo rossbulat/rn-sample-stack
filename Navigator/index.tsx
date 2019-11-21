@@ -24,7 +24,7 @@ export const Navigator = createStackNavigator({
     })
   }
 }, {
-  headerBackTitleVisible: false,
+  headerBackTitleVisible: false
 });
 
 export default Navigator;

@@ -8,8 +8,7 @@ import data from './data.json';
 
 export class LoadingPresentational extends React.Component<any, any> {
 
-  constructor (props) {
-    super(props);
+  componentWillMount () {
     console.log('mounting...');
 
     try {
