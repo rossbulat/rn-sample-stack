@@ -9,8 +9,6 @@ import data from './data.json';
 export class LoadingPresentational extends React.Component<any, any> {
 
   componentWillMount () {
-    console.log('mounting...');
-
     try {
       // store session data in redux
       this.props.storeSamplesData(data);
