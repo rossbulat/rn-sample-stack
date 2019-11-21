@@ -49,8 +49,6 @@ export class LoadingPresentational extends React.Component<any, any> {
   }
 
   render () {
-    console.log('render...');
-
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={styles.container}>
