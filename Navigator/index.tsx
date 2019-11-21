@@ -13,14 +13,18 @@ export const Navigator = createStackNavigator({
   Loading: {
     screen: Loading,
     navigationOptions: () => ({
-      headerShown: false
+      headerShown: false,
     })
   },
   Stage: {
-    screen: Stage
+    screen: Stage,
+    navigationOptions: () => ({
+      headerShown: false,
+      gesturesEnabled: false
+    })
   }
 }, {
-  headerBackTitleVisible: false
+  headerBackTitleVisible: false,
 });
 
 export default Navigator;

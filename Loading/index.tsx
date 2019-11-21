@@ -6,53 +6,62 @@ import { storeSamplesData } from '../actions';
 import { SafeAreaView } from 'react-native';
 import data from './data.json';
 
-export function LoadingPresentational (props: any) {
+export class LoadingPresentational extends React.Component<any, any> {
 
-  try {
-    // store session data in redux
-    props.storeSamplesData(data);
+  constructor (props) {
+    super(props);
+    console.log('mounting...');
 
-    // go to session
-    props.navigation.navigate('Stage', {
-      currentStage: 1
-    });
-
-  } catch (e) {
-    props.navigation.navigate('Home')
-  }
-
-  /* fetch request to get sample data
-  
-  fetch('/api/to/sampledata', {
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    method: "POST"
-  })
-    .then(res => res.json())
-    .then(data => {
-
+    try {
       // store session data in redux
-      props.storeSamplesData(data);
+      this.props.storeSamplesData(data);
 
       // go to session
-      props.navigation.navigate('Stage', {
+      this.props.navigation.navigate('Stage', {
         currentStage: 1
       });
-    })
-    .catch(e => {
-      props.navigation.navigate('Home')
-    });
-  */
 
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <Text>Loading...</Text>
-      </View>
-    </SafeAreaView>
-  );
+    } catch (e) {
+      this.props.navigation.navigate('Home')
+    }
+
+    /* fetch request to get sample data
+    
+    fetch('/api/to/sampledata', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST"
+    })
+      .then(res => res.json())
+      .then(data => {
+  
+        // store session data in redux
+        props.storeSamplesData(data);
+  
+        // go to session
+        props.navigation.navigate('Stage', {
+          currentStage: 1
+        });
+      })
+      .catch(e => {
+        props.navigation.navigate('Home')
+      });
+    */
+  }
+
+  render () {
+    console.log('render...');
+
+    return (
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <Text>Loading...</Text>
+        </View>
+      </SafeAreaView >
+    );
+  }
 }
 
 const mapDispatchToProps = {
