@@ -1,1 +1,1 @@
-# React Native (Expo) project demonstrating how to swipe through a sample of items
+# React Native (Expo) project demonstrating how to browse through a sample of items
